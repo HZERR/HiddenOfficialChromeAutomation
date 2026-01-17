@@ -46,9 +46,6 @@ public class HiddenChromeV144InstanceParameters extends ChromeInstanceParameters
     @Override
     protected List<String> getArguments() {
         List<String> args = new ArrayList<>();
-        if (StringUtils.isEmpty(remoteDebuggingPort)) throw new ChromeMissingParametersException("Chrome parameter 'remoteDebuggingPort' isn't provided");
-        if (StringUtils.isEmpty(userDataLocation)) throw new ChromeMissingParametersException("Chrome parameter 'userDataLocation' isn't provided");
-
         args.add("--remote-debugging-port=" + remoteDebuggingPort);
         args.add("--user-data-dir=\"%s\"".formatted(userDataLocation));
 

@@ -1,4 +1,4 @@
-package ru.hzerr;
+package ru.hzerr.chrome;
 
 import ru.hzerr.ex.ChromeInstanceException;
 import ru.hzerr.model.ChromeDevToolsMetaData;
@@ -76,6 +76,11 @@ public class HiddenChromeInstance extends ChromeInstance {
                     Error: %s
                     """.formatted(CHROME_DEVTOOLS_VERSION.formatted(chromeInstanceParameters.getRemoteDebuggingPort()), e.getMessage()), e);
         }
+    }
+
+    @Override
+    protected String getConnectionEndpoint() throws ChromeInstanceException {
+        return getDevToolsMetaData().getChromeDevToolsWebSocketUrl();
     }
 
     @Override

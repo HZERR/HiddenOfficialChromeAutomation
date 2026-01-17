@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.hzerr.chrome.HiddenChromeInstance;
 import ru.hzerr.model.ChromeDevToolsMetaData;
 import ru.hzerr.parameters.HiddenChromeV144InstanceParameters;
 import ru.hzerr.parameters.HiddenChromeV144InstanceParameters.HiddenChromeV144InstanceParametersBuilder;
@@ -50,7 +51,7 @@ public class HiddenOfficialChromeTest {
     @Test
     public void getDevToolsSpecificationTest() {
         String chromeDevToolsSpecification = Assertions.assertDoesNotThrow(() -> chromeInstance.getDevToolsSpecification(), "❌ Failed to retrieve Chrome DevTools specification");
-        Assertions.assertDoesNotThrow(() -> FileUtils.writeStringToFile(new File(CHROME_DEV_TOOLS_SPECIFICATION_LOCATION), chromeDevToolsSpecification, StandardCharsets.UTF_8), "❌ Failed to save DevTools specification to file");
+        Assertions.assertDoesNotThrow(() -> FileUtils.writeStringToFile(new File(CHROME_DEV_TOOLS_SPECIFICATION_LOCATION), chromeDevToolsSpecification, StandardCharsets.UTF_8), "❌ Failed to save Chrome DevTools specification to file");
         System.out.printf("✅ Chrome DevTools specification has been successfully saved! Please look at '%s'%n", CHROME_DEV_TOOLS_SPECIFICATION_LOCATION);
     }
 
