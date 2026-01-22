@@ -1,2 +1,5 @@
 # HiddenOfficialChromeAutomation in Java
-СБОРКИ: https://github.com/HZERR/CHROME_BUILD
+
+![Результат ReCAPTCHA v3](demo.png)
+
+### Chrome: https://github.com/HZERR/CHROME_BUILD
